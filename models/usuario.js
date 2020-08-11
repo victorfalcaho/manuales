@@ -9,9 +9,10 @@ const Usuario = sequelize.define('usuario', {
     allowNull: false,
     primaryKey: true,
   },
-  usuario: Sequelize.STRING,
-  contrasenia: Sequelize.STRING,
-  tipo: Sequelize.INTEGER,
+  nombre: Sequelize.STRING,
+  apellidos: Sequelize.STRING,
+  foto: Sequelize.STRING,
+  sexo: Sequelize.STRING,
 });
 
 module.exports = Usuario;

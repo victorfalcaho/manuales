@@ -2,16 +2,14 @@ const { Sequelize } = require('sequelize');
 
 const sequelize = require('../database/database');
 
-const Usuario = sequelize.define('usuario', {
+const Gallery = sequelize.define('galeria', {
   id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
     allowNull: false,
     primaryKey: true,
   },
-  usuario: Sequelize.STRING,
-  contrasenia: Sequelize.STRING,
-  tipo: Sequelize.INTEGER,
+  imagen: Sequelize.STRING,
 });
 
-module.exports = Usuario;
+module.exports = Gallery;
