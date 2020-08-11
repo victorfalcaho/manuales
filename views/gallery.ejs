@@ -3,19 +3,27 @@
 <div class="row">
     <div class="col-4"></div>
     <div class="col-4">
-        <h1 class="my-4">Iniciar session</h1>
-        <div class="form-group">
-            <label for="user">Usuario</label>
-            <input type="text" class="form-control" name="user">
-        </div>
-        <div class="form-group">
-            <label for="password">Contraseña</label>
-            <input type="password" class="form-control" name="password">
-        </div>
+        <h1 class="my-4">Agregar nuevo imagen</h1>
+        <form action="/agregar-imagen" method="POST">
+            <div class="form-group">
+                <label for="imagen">Imagen</label>
+                <input type="text" class="form-control" name="imagen" placeholder="url:naruto.jpg">
+            </div>
+            <button class="btn btn-primary btn-block">Agregar</button>
+        </form>
     </div>
     <div class="col-4"></div>
 </div>
 
+<div class="row mt-4">
+    <% for(let imagen of resul){ %>
+    <div class="col-3">
+        <div class="card">
+            <img src="<%= imagen.imagen %>" class="card-img-top">
+        </div>
+    </div>
+    <% } %>
+</div>
 
 
 <%- include('./partials/footer.ejs'); %>

@@ -13,14 +13,14 @@ app.set('views', 'views');
 
 const galleryRoutes = require('./routes/gallery');
 const imcRoutes = require('./routes/imc');
-const userRoutes = require('./models/usuario');
+const userRoutes = require('./routes/user');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(userRoutes);
 app.use(imcRoutes);
 app.use(galleryRoutes);
-app.use(userRoutes);
 
 sequelize
   .sync()

@@ -4,14 +4,21 @@
     <div class="col-4"></div>
     <div class="col-4">
         <h1 class="my-4">IMC</h1>
-        <div class="form-group">
-            <label for="user">Usuario</label>
-            <input type="text" class="form-control" name="user">
-        </div>
-        <div class="form-group">
-            <label for="password">Contraseña</label>
-            <input type="password" class="form-control" name="password">
-        </div>
+        <form action="/calcular-imc" method="POST">
+            <div class="form-group">
+                <label for="estatura">Estatura ( En metros )</label>
+                <input type="number" class="form-control" name="estatura" placeholder="ejemplo:1.70" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="peso">Peso ( En kilogramos )</label>
+                <input type="number" class="form-control" name="peso" placeholder="ejemplo:40" step="0.01">
+            </div>
+            <button class="btn btn-primary btn-block ">Calcular IMC</button>
+        </form>
+
+        <% if(resul != 0){ %>
+        <h4 class="mt-3">Tu IMC es de: <%= resul %></h4>
+        <% } %>
     </div>
     <div class="col-4"></div>
 </div>
